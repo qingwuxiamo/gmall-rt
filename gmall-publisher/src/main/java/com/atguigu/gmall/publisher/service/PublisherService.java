@@ -1,5 +1,6 @@
 package com.atguigu.gmall.publisher.service;
 
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -18,4 +19,7 @@ public interface PublisherService {
 
     //交易额分时数据
     Map<String,Double> getOrderAmountHourMap(String date);
+
+    //获取saleDetail
+    Map<String,Object> getSaleDetail(String date, int startpage, int size, String keyword) throws IOException;
 }
