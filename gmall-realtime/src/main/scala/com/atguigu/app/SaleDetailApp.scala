@@ -109,7 +109,7 @@ object SaleDetailApp {
           }else{
             //没有orderInfo数据
             if (detailOpt.isDefined) {
-              //a.拿到orderDetail数据 ??? 没有orderInfo也不一定有orderDetail吧？
+              //a.拿到orderDetail数据
               val orderDetail: OrderDetail = detailOpt.get
 
               //判断是否有可以匹配的orderInfo数据
@@ -126,8 +126,8 @@ object SaleDetailApp {
                 details.add(saleDetail)
               }else{
                 //不存在orderInfo
-                //将orderInfo写入redis缓存
-                //a.首先，将样例类转为json orderInfoJson
+                //将orderDetail写入redis缓存
+                //a.首先，将样例类转为json orderDetailJson
                 val orderInfoJson: String = Serialization.write(orderDetail)(org.json4s.DefaultFormats)
 
                 //b.写入redis
